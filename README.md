@@ -2,7 +2,7 @@
 
 LOG
 
-keylog - 04/30
+keylog
 
-caesar cipher - 05/11
+caesar cipher
 
