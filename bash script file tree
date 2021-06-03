@@ -1,0 +1,13 @@
+REF: bash scripting proj initial file tree
+
+files (d)
+- build (d)
+- source (d)
+  -- bar.js
+  -- buzz.css
+  -- changelog.md
+  -- foo1.html
+  -- foo2.html
+  -- foo3.html
+  -- secretinfo.md
+- script.sh
