@@ -1,4 +1,4 @@
-# Security Related Practice Projects
+# Scripting Practice Projects
 
 LOG
 
