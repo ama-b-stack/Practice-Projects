@@ -1,0 +1,47 @@
+# a release script to copy certain files from a source directory into a build directory #
+
+#!/bin/bash
+
+echo "Hi! Welcome to my program, loser"
+
+# declares variable firstline and appends the first line and only the first line (-n 1) to it #
+firstline=$(head -n 1 source/changelog.md)
+
+# make contents of firstline into an array, splitfirstline, and split by nodes #
+read -a splitfirstline <<< $firstline
+
+# append value of node 1 in splitfirstline array to variable version and print to user #
+version=${splitfirstline[1]}
+echo "You are building version" $version
+
+echo "Do you want to continue? (enter 'y' for yes, 'n' for no)"
+
+read continue
+
+# if conditional, y starts program #
+if [ $continue == "y" ]
+then
+  echo "Oh, that's just great :/ Just kidding!"
+
+  for filename in source/*                                   # for loop iterates through source directory and prints contents #
+  do
+    echo $filename
+
+    if  [ $filename == "source/secretinfo.md" ]              # conditional stops source/secretinfo file from being copied #
+    then
+      echo "!Copying" $filename
+    else
+      echo "Copying" $filename                               # for all filenames that !== source/secretinfo.md, cp (copy) to build directory #
+      cp $filename build
+    fi
+  done
+
+else
+  echo "Great, bye!"
+fi
+
+cd build                                                     # changes directory to build, displays new contents #
+echo "Build version" $version "contains: "
+ls
+cd ../                                                       # then return to previous/original directory #
+
