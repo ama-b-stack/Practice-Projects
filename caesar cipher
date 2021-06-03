@@ -2,14 +2,16 @@
 # that uses a key to shift each given letter by a certain number
 # of positions to create a secret code
 
+# import string module #
 import string
 
+# to use string.ascii_lowercase constant #
 alphabet = string.ascii_lowercase
 
 # intro and accept key and secret #
 print("This is my attempt at creating a Caesar Cipher.\n")
 
-secret = input("Please enter a secret message: ").strip()
+secret = input("Please enter a secret message: ").strip()                    # strip python method removes leading and trailing space #
 print()
 key = int(input("Enter the key: "))
 
@@ -19,14 +21,14 @@ key = int(input("Enter the key: "))
 # position as a letter
 def encrypt():
 
-    global secret, key                  # access external vars secret and key #
+    global secret, key                                                      # access external vars secret and key #
 
     encrypt = ""
 
-    for e in secret:
+    for e in secret:                                                        # for loop that iterates through each letter of the input string in the alphabet and adds the key to the position #
 
         if e in alphabet:
-            position = alphabet.find(e)
+            position = alphabet.find(e)                                     # find method finds occurence of input letter in our alphabet variable #
             new_position = (position + key) % 26
             new_character = alphabet[new_position]
             encrypt += new_character
@@ -37,9 +39,10 @@ def encrypt():
 # of each given letter in the alphabet, subtracts the key from
 # this numeric position given 26 letters, and returns that new
 # position as a letter
+
 def decrypt():
 
-    global secret, key                  # access external vars secret and key #
+    global secret, key                                                     # access external vars secret and key #
 
     decrypt = ""
 
