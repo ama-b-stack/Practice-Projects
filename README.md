@@ -5,3 +5,5 @@ LOG
 - keylog
 
 - caesar cipher
+
+- bash scripting proj
